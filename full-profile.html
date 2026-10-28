@@ -135,7 +135,7 @@
   .menu-toggle { display: none; font-size: 1.6rem; background: none; border: none; cursor: pointer; color: var(--dark); transition: transform 0.3s; }
   .menu-toggle:hover { transform: scale(1.15) rotate(90deg); }
 
-  /* ================= NEW HERO BANNER ================= */
+  /* ================= HERO BANNER ================= */
   .hero-banner { position: relative; width: 100%; min-height: 90vh; display: flex; align-items: center; background: #0f172a; overflow: hidden; padding: 100px 24px; }
   .hero-banner .bg-image { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; filter: brightness(0.3); z-index: 0; }
   .hero-banner .bg-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(37,99,235,0.4) 60%, rgba(15,23,42,0.95)); }
@@ -166,7 +166,7 @@
   .section-head p { color: var(--gray); font-size: 1.05rem; }
 
   /* ================= BUTTONS ================= */
-  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s cubic-bezier(0.16,1,0.3,1); cursor: pointer; border: none; position: relative; overflow: hidden; font-family: inherit; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s cubic-bezier(0.16,1,0.3,1); cursor: pointer; border: none; position: relative; overflow: hidden; font-family: inherit; }
   .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; background-size: 200% 200%; box-shadow: 0 8px 24px rgba(37,99,235,0.35); }
   .btn-primary:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 16px 40px rgba(37,99,235,0.5); background-position: 100% 0; }
   .btn-primary::before { content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.6s; }
@@ -179,7 +179,9 @@
   /* ================= ABOUT ================= */
   #about { background: linear-gradient(180deg, #fff 0%, #f0f4ff 50%, #fff 100%); }
   .about-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 70px; align-items: center; }
-  .about-image-wrap { position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(15,23,42,0.2); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); background: #e2e8f0; aspect-ratio: 4/5; }
+  
+  /* About Image */
+  .about-image-wrap { position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(15,23,42,0.2); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); background: #e2e8f0; aspect-ratio: 4/5; border: 3px solid #0c215b; }
   .about-image-wrap:hover { transform: scale(1.02) rotate(-1deg); }
   .about-image-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.8s ease; }
   .about-image-wrap:hover img { transform: scale(1.08); }
@@ -187,6 +189,7 @@
   .about-image-overlay h3 { font-size: 1.35rem; font-weight: 700; }
   .about-image-overlay p { color: #cbd5e1; font-size: 0.9rem; margin-top: 4px; }
   .about-image-badge { position: absolute; top: 24px; right: 24px; background: linear-gradient(135deg, var(--yellow), #f59e0b); color: #0f172a; padding: 10px 18px; border-radius: 12px; font-weight: 800; font-size: 0.85rem; box-shadow: 0 10px 25px rgba(234,179,8,0.5); transform: rotate(6deg); animation: float 4s ease-in-out infinite; z-index: 3; }
+  
   .about-text h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 20px; line-height: 1.15; }
   .about-text h2 .grad { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
   .about-text p { color: var(--gray); margin-bottom: 16px; font-size: 1.02rem; }
@@ -216,9 +219,9 @@
   .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 4px; width: 0; transition: width 1.5s ease-in-out; }
   .reveal.visible .progress-fill { width: var(--target-width); }
 
-  /* ================= NEW EXPERIENCE SECTION (Full Width Grid) ================= */
+  /* ================= EXPERIENCE ================= */
   #experience { background: #fff; }
-  .exp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; position: relative; z-index: 2; }
+  .exp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; position: relative; z-index: 2; }
   .exp-card { background: #f8fafc; border-radius: 20px; padding: 40px; border: 1px solid #e2e8f0; border-left: 5px solid var(--primary); transition: all 0.4s cubic-bezier(0.16,1,0.3,1); position: relative; overflow: hidden; }
   .exp-card:hover { transform: translateY(-8px); background: #fff; box-shadow: 0 20px 40px rgba(37,99,235,0.1); border-left-color: var(--accent); }
   .exp-card::before { content: ""; position: absolute; top: 0; right: 0; width: 150px; height: 150px; background: radial-gradient(circle, rgba(37,99,235,0.05), transparent 70%); border-radius: 50%; transition: transform 0.4s; }
@@ -231,7 +234,7 @@
   .exp-card ul li { font-size: 0.95rem; color: var(--gray); margin-bottom: 10px; position: relative; padding-left: 24px; line-height: 1.5; }
   .exp-card ul li::before { content: "✓"; color: var(--primary); font-weight: bold; position: absolute; left: 0; top: 2px; }
 
-  /* ================= CERTIFICATIONS (Bigger Blocks) ================= */
+  /* ================= CERTIFICATIONS ================= */
   #certifications { background: linear-gradient(180deg, #f8fafc 0%, #e0f2fe 100%); }
   .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; position: relative; z-index: 2; }
   .cert-card { background: #fff; padding: 40px 30px; border-radius: 24px; display: flex; align-items: center; gap: 24px; border-top: 5px solid var(--primary); box-shadow: var(--shadow); transition: all 0.4s; }
@@ -240,7 +243,7 @@
   .cert-text h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 6px; line-height: 1.3; }
   .cert-text p { font-size: 0.95rem; color: var(--gray); line-height: 1.5; }
 
-  /* ================= NEW DOCUMENTS SECTION ================= */
+  /* ================= DOCUMENTS ================= */
   #documents { background: #fff; }
   .doc-category { margin-bottom: 60px; }
   .doc-category h3 { font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
@@ -293,7 +296,7 @@
   .form-status.success { background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.4); color: #4ade80; }
   .form-status.error { background: rgba(248,113,113,0.15); border: 1px solid rgba(248,113,113,0.4); color: #f87171; }
 
-  /* ================= FOOTER (FIXED DESIGN) ================= */
+  /* ================= FOOTER ================= */
   footer { width: 100%; background: #060a14; color: #94a3b8; padding: 70px 24px 30px; position: relative; overflow: hidden; }
   .footer-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; margin-bottom: 50px; position: relative; z-index: 2; align-items: start; }
   .footer-col h4 { color: #fff; font-size: 1.1rem; margin-bottom: 24px; font-weight: 700; letter-spacing: 0.5px; position: relative; padding-bottom: 12px; }
@@ -330,6 +333,23 @@
   .whatsapp-float:hover .wa-btn svg { transform: rotate(6deg); }
   .whatsapp-float .wa-btn::after { content: ""; position: absolute; top: 2px; right: 2px; width: 14px; height: 14px; background: #ef4444; border: 2px solid #fff; border-radius: 50%; animation: pulseGlow 1.5s infinite; box-shadow: 0 0 0 0 rgba(239,68,68,0.7); }
 
+  /* WhatsApp Chat Popup (Fixed styling) */
+  .wa-chat-popup { position: fixed; right: 24px; bottom: 170px; width: 320px; background: #fff; border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,0.25); overflow: hidden; z-index: 998; opacity: 0; pointer-events: none; transform: translateY(20px) scale(0.95); transition: all 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .wa-chat-popup.show { opacity: 1; pointer-events: auto; transform: translateY(0) scale(1); }
+  .wa-chat-head { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; padding: 16px 18px; display: flex; align-items: center; gap: 12px; position: relative; }
+  .wa-chat-head .avatar { width: 42px; height: 42px; border-radius: 50%; background: #fff; color: #128C7E; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+  .wa-chat-head .meta strong { display: block; font-size: 0.95rem; font-weight: 700; }
+  .wa-chat-head .meta small { font-size: 0.75rem; opacity: 0.9; display: flex; align-items: center; gap: 5px; }
+  .wa-chat-head .meta small::before { content: ""; width: 7px; height: 7px; background: #4ade80; border-radius: 50%; box-shadow: 0 0 8px #4ade80; }
+  .wa-chat-body { padding: 20px; background: #f8fafc; font-size: 0.9rem; color: #334155; line-height: 1.6; }
+  .wa-chat-body .bubble { background: #fff; padding: 12px 16px; border-radius: 12px 12px 12px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 10px; animation: slideInChat 0.5s ease both; }
+  .wa-chat-body .bubble:nth-child(2) { animation-delay: 0.15s; }
+  .wa-chat-actions { padding: 14px 18px 18px; background: #fff; border-top: 1px solid #f1f5f9; }
+  .wa-chat-actions a { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px; background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(37,211,102,0.35); }
+  .wa-chat-actions a:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(37,211,102,0.5); }
+  .wa-chat-close { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.2); border: none; color: #fff; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+  .wa-chat-close:hover { background: rgba(255,255,255,0.35); transform: rotate(90deg); }
+
   /* ================= BACK TO TOP ================= */
   .back-top { position: fixed; bottom: 30px; right: 30px; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; border: none; font-size: 1.3rem; cursor: pointer; box-shadow: 0 8px 24px rgba(37,99,235,0.45); opacity: 0; transform: translateY(20px) scale(0.8); pointer-events: none; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); z-index: 90; display: flex; align-items: center; justify-content: center; }
   .back-top.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
@@ -340,11 +360,11 @@
     .hero-content { grid-template-columns: 1fr; gap: 40px; }
     .hero-info-card { max-width: 500px; margin: 0 auto; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
+    .exp-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 900px) {
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-    .exp-grid { grid-template-columns: 1fr; }
     .hero-banner { padding: 80px 20px; }
   }
   @media (max-width: 720px) {
@@ -363,6 +383,7 @@
     .whatsapp-float { right: 16px; bottom: 82px; }
     .whatsapp-float .wa-btn { width: 54px; height: 54px; }
     .whatsapp-float .wa-btn svg { width: 28px; height: 28px; }
+    .wa-chat-popup { right: 16px; bottom: 150px; width: calc(100% - 32px); max-width: 320px; }
     .about-credentials { grid-template-columns: 1fr; }
     .cert-card { flex-direction: column; text-align: center; padding: 30px 20px; }
     .doc-grid { grid-template-columns: 1fr; }
@@ -397,7 +418,7 @@
   </nav>
 </header>
 
-<!-- ================= NEW HERO BANNER (No Carousel) ================= -->
+<!-- ================= HERO BANNER ================= -->
 <section class="hero-banner" id="home">
   <div class="bg-image"></div>
   <div class="hero-content">
@@ -407,7 +428,7 @@
       <p>I am a dedicated Civil Engineer and QA/QC Specialist with 8+ years of experience in material inspection, testing, and construction management. I ensure that every project meets the highest standards of safety, quality, and structural integrity.</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn btn-primary">Hire Me <span class="arrow">→</span></a>
-        <a href="#experience" class="btn btn-outline">View Experience</a>
+        <button onclick="printResume()" class="btn btn-outline" style="background: rgba(255,255,255,0.1);">🖨️ Print / Save Resume</button>
       </div>
     </div>
     
@@ -463,7 +484,7 @@
     <div class="about-grid">
       <div class="about-image-wrap reveal reveal-left">
         <div class="about-image-badge">8+ Years Exp.</div>
-        <img src="https://raw.githubusercontent.com/MKareem57/profile/main/images/pic2.jpeg" alt="Mohammed Kareem Profile Photo" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80'">
+        <img src="https://raw.githubusercontent.com/MKareem57/profile/main/images/pic4.jpeg" alt="Mohammed Kareem Profile Photo" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80'">
         <div class="about-image-overlay">
           <div>
             <h3>Mohammed Kareem</h3>
@@ -584,7 +605,7 @@
   </div>
 </section>
 
-<!-- ================= NEW EXPERIENCE SECTION (Full Width Grid) ================= -->
+<!-- ================= EXPERIENCE ================= -->
 <section id="experience" class="section-3d">
   <div class="bg-layer">
     <div class="bg-waves">
@@ -690,7 +711,7 @@
   </div>
 </section>
 
-<!-- ================= CERTIFICATIONS (Bigger Blocks) ================= -->
+<!-- ================= CERTIFICATIONS ================= -->
 <section id="certifications" class="section-3d">
   <div class="bg-layer">
     <div class="bg-waves">
@@ -764,7 +785,7 @@
   </div>
 </section>
 
-<!-- ================= NEW DOCUMENTS SECTION ================= -->
+<!-- ================= DOCUMENTS ================= -->
 <section id="documents" class="section-3d">
   <div class="bg-layer">
     <div class="bg-waves">
@@ -920,10 +941,9 @@
   </div>
 </section>
 
-<!-- ================= FOOTER (FIXED DESIGN) ================= -->
+<!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-grid">
-    <!-- Brand Column -->
     <div class="footer-col">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
         <div style="width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#2563eb,#0891b2);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:1.1rem;">MK</div>
@@ -940,7 +960,6 @@
       </div>
     </div>
 
-    <!-- Quick Links Column -->
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
@@ -954,7 +973,6 @@
       </ul>
     </div>
 
-    <!-- Core Competencies Column -->
     <div class="footer-col">
       <h4>Core Competencies</h4>
       <ul>
@@ -966,7 +984,6 @@
       </ul>
     </div>
 
-    <!-- Contact Details Column -->
     <div class="footer-col">
       <h4>Contact Details</h4>
       <a href="tel:+966537836478" class="footer-contact-line">
@@ -994,7 +1011,7 @@
   </div>
 </footer>
 
-<!-- ================= WHATSAPP LIVE CHAT ================= -->
+<!-- ================= WHATSAPP LIVE CHAT POPUP ================= -->
 <div class="wa-chat-popup" id="waChatPopup">
   <div class="wa-chat-head">
     <button class="wa-chat-close" id="waChatClose" aria-label="Close chat">✕</button>
@@ -1189,6 +1206,207 @@
       submitBtn.querySelector('.btn-text').textContent = 'Send Message';
     }
   });
+
+  /* ============ PRINT RESUME LOGIC (2 Pages) ============ */
+  function printResume() {
+    // 1. Create a hidden iframe for clean printing
+    const iframe = document.createElement('iframe');
+    iframe.style.position = 'absolute';
+    iframe.style.width = '0';
+    iframe.style.height = '0';
+    iframe.style.border = 'none';
+    document.body.appendChild(iframe);
+
+    const doc = iframe.contentWindow.document;
+
+    // 2. Write the standard A4 Resume format into the iframe
+    doc.open();
+    doc.write(`
+      <html>
+      <head>
+        <title>Resume - Mohammed Kareem</title>
+        <style>
+          @page { margin: 20px; size: A4; }
+          body { font-family: 'Segoe UI', Arial, sans-serif; color: #333; line-height: 1.5; font-size: 11pt; }
+          
+          /* Header with photo */
+          .header-container { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #2563eb; padding-bottom: 15px; margin-bottom: 20px; }
+          .header-text { flex: 1; }
+          .header-text h1 { margin: 0; font-size: 24pt; color: #1e293b; }
+          .header-text h2 { margin: 5px 0 10px 0; font-size: 14pt; color: #2563eb; font-weight: normal; text-transform: uppercase; letter-spacing: 1px; }
+          .contact-info { font-size: 10pt; color: #555; }
+          .header-photo { width: 100px; height: 115px; border-radius: 8px; object-fit: cover; border: 2px solid #0c215b; margin-left: 20px; }
+          
+          /* Sections */
+          .section-title { font-size: 13pt; font-weight: bold; color: #1e293b; border-bottom: 1px solid #ccc; padding-bottom: 3px; margin-top: 20px; margin-bottom: 10px; text-transform: uppercase; }
+          .job { margin-bottom: 15px; }
+          .job-header { display: flex; justify-content: space-between; font-weight: bold; }
+          .job-title { color: #2563eb; }
+          .job-date { color: #555; font-size: 10pt; }
+          .job-company { font-style: italic; color: #444; margin-bottom: 5px; }
+          ul { margin: 5px 0 10px 20px; padding: 0; }
+          li { margin-bottom: 4px; }
+          .skills-list { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 20px; }
+          .skills-list span { font-weight: bold; color: #1e293b; }
+          
+          /* Page Break */
+          .page-break { page-break-before: always; }
+        </style>
+      </head>
+      <body>
+        
+        <!-- Header Section -->
+        <div class="header-container">
+          <div class="header-text">
+            <h1>Mohammed Kareem</h1>
+            <h2>Civil & QA/QC Engineer</h2>
+            <div class="contact-info">
+              Riyadh, Saudi Arabia | +966 537 836 478 | mohammedkareem0507@gmail.com<br>
+              linkedin.com/in/mohammedkareem0507
+            </div>
+          </div>
+          <!-- Profile Photo -->
+          <img src="https://raw.githubusercontent.com/MKareem57/profile/main/images/pic4.jpeg" class="header-photo" alt="Profile Photo" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=175&q=80'">
+        </div>
+
+        <div class="section-title">Professional Profile</div>
+        <p>Dedicated Civil Engineer and QA/QC Specialist with 8+ years of comprehensive experience in Material Inspection, Testing, and Construction Management. Proven track record of implementing rigorous Quality Management Systems (QMS) and ensuring strict compliance with international codes and standards. Eager to leverage technical expertise and attention to detail to ensure structural integrity and quality excellence in a challenging role.</p>
+
+        <div class="section-title">Experience</div>
+        
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">QA/QC Engineer</span>
+            <span class="job-date">Mar 2024 - Present</span>
+          </div>
+          <div class="job-company">Al Munayaz Co. — Riyadh, KSA</div>
+          <ul>
+            <li>Create and implement quality standards, procedures, and best practices for production, testing, and evaluation.</li>
+            <li>Design and perform inspections, evaluations, and tests on materials, equipment, and finished products.</li>
+            <li>Performed QA/QC inspection for structural steel fabrication & erection as per approved ITPs.</li>
+            <li>Inspected incoming steel materials, MTCs, bolts, welding consumables and verified compliance with project specs.</li>
+            <li>Monitored fit-up, welding activities, WPS/PQR compliance, welder qualifications and conducted visual inspection.</li>
+            <li>Inspected surface preparation and painting/coating system (DFT check, adhesion test) as per spec.</li>
+            <li>Conducted comprehensive testing and inspection on site and evaluation of soil, asphalt, and steel materials to ensure compliance with project specifications ASTM, ASHTO, and BS.</li>
+            <li>Maintain meticulous records, including non-conformance reports (NCRs), test results, and quality checklists.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">QA/QC Engineer</span>
+            <span class="job-date">Apr 2022 - Mar 2024</span>
+          </div>
+          <div class="job-company">Shibh Al Jazira Contracting Co. — Riyadh, KSA</div>
+          <ul>
+            <li>Inspected the tests to ensure methods comply with IS, ASTM, ASHTO, and BS specifications.</li>
+            <li>Prepared inspection reports, NCRs, punch lists and ensured closure with corrective actions.</li>
+            <li>Conducted inspection of rebar delivery, grade (60), size, MTC verification and storage condition.</li>
+            <li>Checked rebar cutting, bending, lapping, spacing, cover and bar schedule as per ACI 318 & shop drawings.</li>
+            <li>Collected, analyzed, and reported on quality data, identifying trends and areas for improvement.</li>
+            <li>Evaluated and qualified new suppliers to ensure incoming materials meet quality requirements.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Civil Site Engineer</span>
+            <span class="job-date">Aug 2019 - Jul 2020</span>
+          </div>
+          <div class="job-company">Variant Builders Pvt. Ltd. — India</div>
+          <ul>
+            <li>Inspected reinforcement placement for footings, columns, beams, slabs, walls before concrete pour.</li>
+            <li>Verified rebar couplers, mechanical splicing and performed bend test / tensile test.</li>
+            <li>Inspected tests and ensured methods comply with specifications.</li>
+            <li>Maintained accurate records of lab data to ensure quality control.</li>
+            <li>Trained production staff, technicians, and other professionals on quality control principles.</li>
+            <li>Conducted internal audits to ensure compliance with quality management systems (QMS) like ISO standards.</li>
+            <li>Led root cause analysis (RCA) for defects and implemented corrective and preventive actions (CAPA).</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Civil Site Engineer</span>
+            <span class="job-date">Jul 2018 - Jul 2019</span>
+          </div>
+          <div class="job-company">VK Construction — India</div>
+          <ul>
+            <li>Involved in constructing the DG Building at Thiar Jail, Delhi, India.</li>
+            <li>Monitored the condition of materials and equipment and reported any issues immediately.</li>
+            <li>Participated in laboratory meetings to discuss results and make recommendations for improvement.</li>
+            <li>Attended Internal and External Audits.</li>
+            <li>Ensured the project complied with legal requirements, especially health and safety.</li>
+            <li>Monitored operations to ensure they meet production standards.</li>
+            <li>Inspected, tested, and measured materials using calipers, gauges, or micrometers.</li>
+          </ul>
+        </div>
+
+        <!-- PAGE BREAK FOR 2 FULL PAGES -->
+        <div class="page-break"></div>
+
+        <div class="section-title">Education</div>
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Master of Technology in Environmental Engineering</span>
+            <span class="job-date">2021 - 2022</span>
+          </div>
+          <div class="job-company">Amity University, Uttar Pradesh (First Division)</div>
+        </div>
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Bachelor of Technology in Civil Engineering</span>
+            <span class="job-date">2014 - 2018</span>
+          </div>
+          <div class="job-company">Dr. A.P.J. Abdul Kalam Technical University, Uttar Pradesh (First Division)</div>
+        </div>
+
+        <div class="section-title">Certifications & Licenses</div>
+        <ul>
+          <li><strong>Saudi Council of Engineers (SCE):</strong> Professional Accreditation (Membership No: 12598905). Valid until June 2027.</li>
+          <li><strong>ISO 9001:2015 (QMS):</strong> Certified Internal Auditor.</li>
+          <li><strong>ISO 14001:2015 (EMS):</strong> Certified Internal Auditor.</li>
+          <li><strong>ISO 45001:2018 (OH&S):</strong> Certified Internal Auditor.</li>
+          <li><strong>Numerical Optimization Techniques:</strong> Certificate of Training by Prof. Zenevel Fuat Toprak (Dicle University Turkey).</li>
+          <li><strong>Earthquake Resistant Design (Staad Pro):</strong> Training from B&S Directorate - RDSO, related to analysis & design of railway steel and concrete bridges.</li>
+        </ul>
+
+        <div class="section-title">Technical Skills</div>
+        <div class="skills-list">
+          <div><span>Software:</span> AutoCAD, Staad Pro, Microsoft Office, LIMS</div>
+          <div><span>Standards:</span> ASTM, ACI, IS, BS, ASHTO</div>
+          <div><span>Testing:</span> Soil, Asphalt, Steel, Concrete, Rebar</div>
+          <div><span>Auditing:</span> QMS, EMS, OH&S Internal Audits</div>
+        </div>
+
+        <div class="section-title">Core Competencies</div>
+        <div class="skills-list">
+          <div>• Material Inspection</div>
+          <div>• Project Management</div>
+          <div>• QA/QC Auditing</div>
+          <div>• Structural Steel</div>
+          <div>• Concrete Technology</div>
+          <div>• Problem Solving</div>
+          <div>• NCR & CAPA Management</div>
+          <div>• Supplier Evaluation</div>
+        </div>
+
+        <div class="section-title">Languages</div>
+        <p>English, Arabic, Urdu, Hindi, Spanish</p>
+      </body>
+      </html>
+    `);
+    doc.close();
+
+    // 3. Trigger Print
+    iframe.contentWindow.focus();
+    iframe.contentWindow.print();
+    
+    // 4. Clean up
+    setTimeout(() => {
+      document.body.removeChild(iframe);
+    }, 1000);
+  }
 </script>
 
 </body>
