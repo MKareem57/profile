@@ -32,16 +32,6 @@
   @keyframes waveMove1 { 0% { transform: translateX(0) translateY(0) scale(1); } 50% { transform: translateX(-3%) translateY(-2%) scale(1.02); } 100% { transform: translateX(0) translateY(0) scale(1); } }
   @keyframes waveMove2 { 0% { transform: translateX(0) translateY(0); } 50% { transform: translateX(2%) translateY(3%); } 100% { transform: translateX(0) translateY(0); } }
   @keyframes waveMove3 { 0%,100% { transform: translateX(0) rotate(0deg); } 50% { transform: translateX(-1.5%) rotate(0.3deg); } }
-  @keyframes orbFloat1 { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(60px,-40px) scale(1.15); } 66% { transform: translate(-40px,50px) scale(0.9); } }
-  @keyframes orbFloat2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-80px,-50px) scale(1.2); } }
-  @keyframes logoShake {
-    0%, 100% { transform: rotate(0deg) scale(1); }
-    5% { transform: rotate(-8deg) scale(1.05); }
-    10% { transform: rotate(8deg) scale(1.05); }
-    15% { transform: rotate(-6deg) scale(1.03); }
-    20% { transform: rotate(6deg) scale(1.03); }
-    25% { transform: rotate(0deg) scale(1); }
-  }
 
   /* ================= BACKGROUNDS ================= */
   .page-bg {
@@ -56,7 +46,7 @@
   .bg-waves .wave-group-3 { animation: waveMove3 26s ease-in-out infinite; transform-origin: center; }
   .bg-waves path { fill: none; stroke-width: 0.8; stroke-linecap: round; }
 
-  /* ================= NAVIGATION (Back to Portfolio) ================= */
+  /* ================= NAVIGATION (View Resume) ================= */
   .top-nav { width: 100%; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: 0 auto; position: relative; z-index: 10; }
   .back-btn {
     display: inline-flex; align-items: center; gap: 8px;
@@ -76,7 +66,7 @@
   /* ================= COVER LETTER PAPER ================= */
   .letter-wrapper { max-width: 900px; margin: 20px auto 80px; padding: 0 24px; position: relative; z-index: 2; }
   .letter-paper {
-    background: var(--white); border-radius: 24px; padding: 60px 70px;
+    background: var(--white); border-radius: 24px; padding: 50px 60px;
     box-shadow: 0 30px 80px rgba(15,23,42,0.15), 0 0 0 1px rgba(255,255,255,0.5);
     position: relative; overflow: hidden;
     animation: fadeInUp 0.8s ease both;
@@ -89,56 +79,65 @@
   }
 
   /* ================= LETTER HEADER ================= */
-  .letter-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #e2e8f0; padding-bottom: 30px; margin-bottom: 30px; }
-  .sender-info h1 { font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 4px; line-height: 1.1; }
-  .sender-info h2 { font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1.5px; }
-  .sender-contact { font-size: 0.9rem; color: var(--gray); line-height: 1.8; }
+  .letter-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #e2e8f0; padding-bottom: 25px; margin-bottom: 25px; }
+  .sender-info h1 { font-size: 2rem; font-weight: 800; color: var(--dark); margin-bottom: 4px; line-height: 1.1; }
+  .sender-info h2 { font-size: 1rem; font-weight: 600; color: var(--primary); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1.5px; }
+  .sender-contact { font-size: 0.85rem; color: var(--gray); line-height: 1.7; }
   .sender-contact a { color: var(--gray); text-decoration: none; transition: color 0.3s; }
   .sender-contact a:hover { color: var(--primary); }
 
-  .letter-logo { width: 70px; height: 70px; border-radius: 18px; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 1.4rem; box-shadow: 0 10px 25px rgba(37,99,235,0.3); animation: logoShake 4s ease-in-out infinite; }
+  /* Profile Photo */
+  .letter-logo { 
+    width: 160px; 
+    height: 180px; 
+    border-radius: 16px; 
+    background: #e2e8f0;
+    overflow: hidden; 
+    box-shadow: 0 10px 25px rgba(37,99,235,0.2); 
+    border: 3px solid var(--white);
+    flex-shrink: 0;
+  }
+  .letter-logo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 
   /* ================= LETTER CONTENT ================= */
-  .date-line { font-size: 0.95rem; color: var(--gray); margin-bottom: 24px; font-weight: 500; }
+  .date-line { font-size: 0.9rem; color: var(--gray); margin-bottom: 20px; font-weight: 500; }
   
-  .recipient-info { margin-bottom: 30px; }
-  .recipient-info p { font-size: 1rem; color: var(--dark); font-weight: 600; margin-bottom: 2px; }
-  .recipient-info span { font-size: 0.95rem; color: var(--gray); display: block; }
+  .recipient-info { margin-bottom: 25px; }
+  .recipient-info p { font-size: 0.95rem; color: var(--dark); font-weight: 600; margin-bottom: 2px; }
+  .recipient-info span { font-size: 0.9rem; color: var(--gray); display: block; }
 
-  .salutation { font-size: 1.1rem; font-weight: 600; color: var(--dark); margin-bottom: 20px; }
+  .salutation { font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: 15px; }
 
-  .letter-body p { font-size: 1.02rem; color: #334155; margin-bottom: 18px; text-align: justify; line-height: 1.7; }
+  .letter-body p { font-size: 0.95rem; color: #334155; margin-bottom: 14px; text-align: justify; line-height: 1.65; }
   .letter-body strong { color: var(--dark); font-weight: 700; }
   
   /* Highlight Box inside text */
   .highlight-box {
     background: rgba(37,99,235,0.05); border-left: 4px solid var(--primary);
-    padding: 20px 24px; border-radius: 0 12px 12px 0; margin: 24px 0;
+    padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 20px 0;
   }
-  .highlight-box p { margin-bottom: 0; font-style: italic; color: #1e293b; }
+  .highlight-box p { margin-bottom: 0; font-style: italic; color: #1e293b; font-size: 0.95rem; }
 
   /* Bullet Points */
-  .letter-list { list-style: none; margin-bottom: 20px; }
-  .letter-list li { position: relative; padding-left: 26px; margin-bottom: 10px; font-size: 1.02rem; color: #334155; line-height: 1.6; }
-  .letter-list li::before { content: "•"; color: var(--primary); font-weight: bold; font-size: 1.4rem; position: absolute; left: 0; top: -2px; }
+  .letter-list { list-style: none; margin-bottom: 16px; }
+  .letter-list li { position: relative; padding-left: 24px; margin-bottom: 8px; font-size: 0.95rem; color: #334155; line-height: 1.6; }
+  .letter-list li::before { content: "•"; color: var(--primary); font-weight: bold; font-size: 1.3rem; position: absolute; left: 0; top: -2px; }
 
   /* ================= SIGN-OFF ================= */
-  .sign-off { margin-top: 40px; }
-  .sign-off p { font-size: 1.02rem; color: #334155; margin-bottom: 40px; }
-  .signature { font-family: 'Georgia', serif; font-size: 2.2rem; font-style: italic; color: var(--primary-dark); margin-bottom: 10px; letter-spacing: 2px; opacity: 0.8; }
-  .sign-off h3 { font-size: 1.1rem; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
-  .sign-off span { font-size: 0.9rem; color: var(--gray); }
+  .sign-off { margin-top: 30px; }
+  .sign-off p { font-size: 0.95rem; color: #334155; margin-bottom: 30px; }
+  .signature { font-family: 'Georgia', serif; font-size: 1.8rem; font-style: italic; color: var(--primary-dark); margin-bottom: 8px; letter-spacing: 2px; opacity: 0.8; }
+  .sign-off h3 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+  .sign-off span { font-size: 0.85rem; color: var(--gray); }
 
   /* ================= FOOTER ================= */
-  .letter-footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.85rem; color: #94a3b8; }
+  .letter-footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.8rem; color: #94a3b8; }
 
   /* ================= RESPONSIVE ================= */
   @media (max-width: 768px) {
-    .letter-paper { padding: 40px 30px; }
+    .letter-paper { padding: 35px 25px; }
     .letter-header { flex-direction: column-reverse; align-items: center; text-align: center; gap: 20px; }
-    .letter-logo { width: 60px; height: 60px; font-size: 1.2rem; }
     .sender-info h1 { font-size: 1.8rem; }
-    .sender-info h2 { font-size: 1rem; }
     .letter-body p { text-align: left; }
   }
 
@@ -181,7 +180,8 @@
 
 <!-- Top Navigation -->
 <div class="top-nav">
-  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+  <!-- Updated Link and Text -->
+  <a href="https://github.com/MKareem57/profile/blob/main/full-profile" target="_blank" rel="noopener" class="back-btn">← View Resume</a>
   <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
 </div>
 
@@ -201,7 +201,11 @@
           <a href="https://linkedin.com/in/mohammedkareem0507" target="_blank">linkedin.com/in/mohammedkareem0507</a>
         </div>
       </div>
-      <div class="letter-logo">MK</div>
+      
+      <!-- Profile Photo (160x180) Updated to pic4.jpeg -->
+      <div class="letter-logo">
+        <img src="https://raw.githubusercontent.com/MKareem57/profile/main/images/pic4.jpeg" alt="Mohammed Kareem Photo" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&h=180&q=80'">
+      </div>
     </div>
 
     <!-- Date & Recipient -->
